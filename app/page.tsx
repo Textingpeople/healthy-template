@@ -71,6 +71,7 @@ export default function HomePage() {
               { label: 'Integrations', href: '/integrations' },
               { label: 'Challenges', href: '/challenges' },
               { label: 'For HR Teams', href: '/for-employers' },
+              { label: 'About', href: '/about' },
             ].map(item => (
               <Link key={item.href} href={item.href} className="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-black/5 transition-all">
                 {item.label}
@@ -101,6 +102,7 @@ export default function HomePage() {
                 { label: 'Integrations', href: '/integrations' },
                 { label: 'Challenges', href: '/challenges' },
                 { label: 'For HR Teams', href: '/for-employers' },
+                { label: 'About', href: '/about' },
               ].map(item => (
                 <Link key={item.href} href={item.href} className="block px-3 py-2.5 text-sm text-gray-700 hover:text-gray-900 rounded-lg hover:bg-black/5">
                   {item.label}
@@ -262,6 +264,40 @@ export default function HomePage() {
               <p className="text-xl font-bold gradient-text-green">+250 pts</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── AT A GLANCE ── */}
+      <section className="py-16 px-6 relative" style={{ zIndex: 1 }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-green-700 mb-4"
+              style={{ background: 'rgba(134,239,172,0.2)', border: '1px solid rgba(134,239,172,0.4)' }}>
+              AT A GLANCE
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+              Wellness software for workplace challenges — not medical care.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: '💡', title: 'What it is', desc: 'A wellness platform employers offer employees to connect activity and join challenges.' },
+              { icon: '🔄', title: 'How it works', desc: 'Connect Apple Health, join challenges, earn employer-set rewards — automatically.' },
+              { icon: '💬', title: 'Text alerts', desc: 'Optional, opt-in. Transactional account alerts only — never marketing texts.' },
+            ].map(card => (
+              <div key={card.title} className="glass-card p-6">
+                <span className="text-2xl mb-3 block">{card.icon}</span>
+                <h3 className="font-bold text-gray-900 mb-2">{card.title}</h3>
+                <p className="text-sm text-gray-500">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 text-center mt-8 max-w-2xl mx-auto">
+            Team Cross Fit is not a medical device and does not provide medical advice.{' '}
+            <Link href="/about" className="text-green-600 hover:underline">About →</Link>
+            {' · '}
+            <Link href="/sms" className="text-green-600 hover:underline">SMS Program →</Link>
+          </p>
         </div>
       </section>
 
@@ -671,8 +707,7 @@ export default function HomePage() {
                   { label: 'Steps', on: true },
                   { label: 'Workouts', on: true },
                   { label: 'Active Energy', on: true },
-                  { label: 'Sleep', on: false },
-                  { label: 'Heart Rate', on: false },
+                  { label: 'Exercise Minutes', on: true },
                 ].map(item => (
                   <div key={item.label} className="flex items-center justify-between p-3 rounded-xl" style={{ background: 'rgba(0,0,0,0.03)' }}>
                     <span className="text-sm font-medium text-gray-700">{item.label}</span>

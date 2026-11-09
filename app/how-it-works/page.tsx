@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'How It Works — Team Cross Fit',
+  description: 'How employees connect health apps and HR teams launch wellness programs with Team Cross Fit.',
+};
 
 export default function HowItWorksPage() {
   return (

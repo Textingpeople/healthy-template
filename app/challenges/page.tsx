@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Challenges — Team Cross Fit',
+  description: 'Explore the wellness challenges, team competitions, and reward programs available on Team Cross Fit.',
+};
 
 function ProgressBar({ pct, color }: { pct: number; color: string }) {
   return (

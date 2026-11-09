@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy — Team Cross Fit',
+  description: 'How Team Cross Fit collects, uses, and protects your information, including SMS and health data practices.',
+};
 
 export default function PrivacyPage() {
   return (
@@ -20,7 +26,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </div>
           <h1 className="text-5xl font-bold text-gray-900 tracking-tight mb-4">Privacy Policy</h1>
-          <p className="text-lg text-gray-500">Last Updated: September 8, 2026</p>
+          <p className="text-lg text-gray-500">Last Updated: November 9, 2026</p>
         </div>
       </section>
 
@@ -91,6 +97,9 @@ export default function PrivacyPage() {
                 <p className="text-sm text-red-700">
                   <strong>No mobile information will be shared with or sold to third parties for marketing or promotional purposes.</strong> All categories of mobile information are excluded from sharing with third-party marketers. We are committed to protecting your mobile information and will only use it for the purposes outlined in this Privacy Policy, such as providing our wellness platform and communicating with you about your account via transactional account alert SMS messages.
                 </p>
+                <p className="text-sm text-red-700 mt-2">
+                  Text messaging originator opt-in data and consent will not be shared with any third parties. All the above categories exclude text messaging originator opt-in data and consent.
+                </p>
               </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2.4 Automatically Collected Information</h3>
@@ -136,7 +145,7 @@ export default function PrivacyPage() {
                   <ul className="text-sm text-red-700 space-y-1">
                     <li>• Individual employee health data</li>
                     <li>• Personal medical information</li>
-                    <li>• Heart rate or sleep data</li>
+                    <li>• Any health data types you haven&apos;t authorized</li>
                     <li>• Individual step counts by name</li>
                     <li>• Any data you haven&apos;t authorized</li>
                   </ul>
@@ -156,12 +165,15 @@ export default function PrivacyPage() {
 
               <h3 className="text-xl font-semibold text-gray-900 mt-4 mb-2">5.3 Legal Requirements</h3>
               <p className="text-gray-600">When required by law, court order, or government regulation.</p>
+              <p className="text-gray-600 mt-4">
+                Text messaging originator opt-in data and consent will not be shared with any third parties. All the above categories exclude text messaging originator opt-in data and consent.
+              </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. SMS Communications</h2>
               <p className="text-gray-600 mb-4">
-                Team Cross Fit may send SMS (text message) communications to users who have opted in. Our SMS program is limited exclusively to <strong>alert related text messages</strong>, which may include:
+                Team Cross Fit may send SMS (text message) communications to users who have opted in. Our SMS program is limited exclusively to <strong>transactional account alert text messages</strong>, which may include:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Account access and onboarding confirmations</li>
@@ -173,7 +185,7 @@ export default function PrivacyPage() {
                 <strong>We do not send marketing or promotional SMS messages.</strong> No mobile information will be shared with or sold to third parties for marketing or promotional purposes.
               </p>
               <p className="text-gray-600 mt-4">
-                Message and data rates may apply. Message frequency varies based on account activity. To opt out of SMS notifications at any time, reply <strong>STOP</strong> to any message. For help, reply <strong>HELP</strong> or contact us at <a href="mailto:hello@teamcrossfit.com" className="text-green-600 hover:underline">hello@teamcrossfit.com</a>.
+                Message and data rates may apply. Message frequency varies based on account activity. <strong>Consent is not a condition of purchase.</strong> To opt out of SMS notifications at any time, reply <strong>STOP</strong> to any message. <strong>To resubscribe, reply START.</strong> For help, reply <strong>HELP</strong> or contact us at <a href="mailto:hello@teamcrossfit.com" className="text-green-600 hover:underline">hello@teamcrossfit.com</a>.
               </p>
             </div>
 
@@ -216,8 +228,9 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
               <div className="glass-card p-6">
                 <p className="text-gray-600 mb-2"><strong>Email:</strong> <a href="mailto:hello@teamcrossfit.com" className="text-green-600 hover:underline">hello@teamcrossfit.com</a></p>
-                <p className="text-gray-600 mb-2"><strong>Phone:</strong> (855) XXX-XXXX</p>
-                <p className="text-gray-600"><strong>Website:</strong> <a href="/" className="text-green-600 hover:underline">teamcrossfit.com</a></p>
+                <p className="text-gray-600 mb-2"><strong>Phone:</strong> (302) 520-5454</p>
+                <p className="text-gray-600 mb-2"><strong>Address:</strong> #3085 1401 Pennsylvania Ave Suite 105, Wilmington, DE 19806</p>
+                <p className="text-gray-600"><strong>Website:</strong> <Link href="/" className="text-green-600 hover:underline">teamcrossfit.com</Link></p>
               </div>
             </div>
 

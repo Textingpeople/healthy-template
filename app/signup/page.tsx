@@ -10,6 +10,7 @@ type Step = 1 | 2 | 3;
 export default function SignupPage() {
   const [step, setStep] = useState<Step>(1);
   const [companyIdError, setCompanyIdError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
   const [formData, setFormData] = useState({
     companyId: '',
     firstName: '',
@@ -33,6 +34,11 @@ export default function SignupPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData.smsOptIn && !formData.phone.trim()) {
+      setPhoneError('Enter a mobile number to receive text alerts.');
+      return;
+    }
+    setPhoneError('');
     nextStep();
   };
 
@@ -190,10 +196,18 @@ export default function SignupPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number (Optional)</label>
-                <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Phone Number {formData.smsOptIn ? <span className="text-red-500">*</span> : '(Optional)'}
+                </label>
+                <input type="tel" name="phone" required={formData.smsOptIn} value={formData.phone}
+                  onChange={(e) => { handleChange(e); if (phoneError) setPhoneError(''); }}
+                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm ${
+                    phoneError ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                  }`}
                   placeholder="(555) 123-4567" />
+                {phoneError && (
+                  <p className="text-red-500 text-sm mt-2 font-medium">{phoneError}</p>
+                )}
               </div>
 
               <div>
@@ -224,10 +238,10 @@ export default function SignupPage() {
               <div className="p-4 rounded-xl border border-gray-200 bg-gray-50">
                 <div className="flex items-start gap-3">
                   <input type="checkbox" id="smsOptIn" name="smsOptIn" checked={formData.smsOptIn}
-                    onChange={handleChange}
+                    onChange={(e) => { handleChange(e); if (!e.target.checked) setPhoneError(''); }}
                     className="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded flex-shrink-0" />
                   <label htmlFor="smsOptIn" className="text-xs leading-relaxed text-gray-600">
-                    By checking this box, I expressly consent to receive <strong>transactional account alert text messages</strong> from Team Cross Fit, including account confirmations, wellness challenge milestone alerts, movement streak notifications, and reward activity alerts. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help. Message and data rates may apply. Message frequency varies based on account activity. <strong>No mobile information will be shared with or sold to third parties for marketing or promotional purposes.</strong> Opting in is optional and not required to use the service. See our <Link href="/terms" className="text-green-600 underline">Terms of Service</Link> (Section 5) for full SMS disclosures.
+                    By checking this box, I expressly consent to receive <strong>transactional account alert text messages</strong> from Team Cross Fit, including account confirmations, wellness challenge milestone alerts, movement streak notifications, and reward activity alerts. <strong>Consent is not a condition of purchase.</strong> Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help. Message and data rates may apply. Message frequency varies based on account activity. <strong>No mobile information will be shared with or sold to third parties for marketing or promotional purposes.</strong> Opting in is optional and not required to use the service. See our <Link href="/terms#sms" className="text-green-600 underline">Terms of Service</Link> and <Link href="/privacy" className="text-green-600 underline">Privacy Policy</Link>.
                   </label>
                 </div>
               </div>

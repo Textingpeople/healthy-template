@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'For HR Teams — Team Cross Fit',
+  description: 'Build a connected employee wellness program with Team Cross Fit — challenges, rewards, and aggregate engagement reporting for HR teams.',
+};
 
 export default function ForEmployersPage() {
   return (
@@ -51,9 +57,9 @@ export default function ForEmployersPage() {
           <div className="glass-card p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
-                { value: '68%', label: 'Average challenge participation rate' },
-                { value: '3x', label: 'More engagement vs. traditional programs' },
-                { value: '91%', label: 'Employee satisfaction with connected wellness' },
+                { value: '⟳', label: 'Automatic activity sync' },
+                { value: '🏆', label: 'Team and individual challenges' },
+                { value: '🔒', label: 'Aggregate-only reporting' },
                 { value: '0', label: 'Manual data entry required from employees' },
               ].map(stat => (
                 <div key={stat.label}>

@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service — Team Cross Fit',
+  description: 'Terms of Service for the Team Cross Fit employee wellness platform, including SMS communication disclosures.',
+};
 
 export default function TermsPage() {
   return (
@@ -20,7 +26,7 @@ export default function TermsPage() {
             Terms of Service
           </div>
           <h1 className="text-5xl font-bold text-gray-900 tracking-tight mb-4">Terms of Service</h1>
-          <p className="text-lg text-gray-500">Last Updated: September 8, 2026</p>
+          <p className="text-lg text-gray-500">Last Updated: November 9, 2026</p>
         </div>
       </section>
 
@@ -77,7 +83,7 @@ export default function TermsPage() {
             </ul>
           </div>
 
-          <div>
+          <div id="sms">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">5. SMS Communications — Transactional Account Alerts</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 By providing your phone number and checking the SMS opt-in box during account registration, you expressly consent to receive <strong>transactional account alert text messages</strong> from Team Cross Fit. These messages are limited to account-related notifications and wellness activity alerts, including:
@@ -94,7 +100,9 @@ export default function TermsPage() {
                 <ul className="text-sm text-green-800 space-y-1">
                   <li>• <strong>Message and data rates may apply.</strong></li>
                   <li>• Message frequency varies based on your account activity.</li>
+                  <li>• <strong>Consent is not a condition of purchase.</strong></li>
                   <li>• To opt out at any time, reply <strong>STOP</strong> to any message.</li>
+                  <li>• To resubscribe, reply <strong>START</strong>.</li>
                   <li>• For help, reply <strong>HELP</strong> or contact <a href="mailto:hello@teamcrossfit.com" className="underline">hello@teamcrossfit.com</a>.</li>
                   <li>• Opting in to SMS is optional and not required to use the Service.</li>
                   <li>• <strong>No mobile information will be shared with or sold to third parties for marketing or promotional purposes.</strong></li>
@@ -103,6 +111,14 @@ export default function TermsPage() {
               <p className="text-gray-600 leading-relaxed mt-4">
                 These SMS messages are strictly transactional in nature. We do not send marketing, promotional, or advertising text messages. Your consent to receive SMS is separate from your agreement to these Terms and may be withdrawn at any time without affecting your access to the Service.
               </p>
+              <div className="mt-4 p-4 rounded-xl" style={{ background: 'rgba(0,0,0,0.03)' }}>
+                <p className="text-sm font-semibold text-gray-700 mb-2">Sample Messages:</p>
+                <ul className="text-sm text-gray-600 space-y-2">
+                  <li>&quot;Team Cross Fit: Welcome! Your account is active. Reply HELP for help, STOP to opt out. Msg &amp; data rates may apply.&quot;</li>
+                  <li>&quot;Team Cross Fit: You completed the 10K Step Challenge and earned 100 pts. Reply STOP to opt out.&quot;</li>
+                  <li>&quot;Team Cross Fit: New sign-in to your account. If this wasn&apos;t you, contact hello@teamcrossfit.com. Reply STOP to opt out.&quot;</li>
+                </ul>
+              </div>
             </div>
 
           <div>
@@ -135,7 +151,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Disclaimer of Warranties</h2>
             <p className="text-gray-600 leading-relaxed">
-              THE SERVICE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. HEALTHY-TEMPLATE DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+              THE SERVICE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TEAM CROSSFIT LLC DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
             </p>
             <p className="text-gray-600 leading-relaxed mt-4">
               The Service is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or health condition. Always consult a qualified healthcare professional for medical advice.
@@ -145,7 +161,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Limitation of Liability</h2>
             <p className="text-gray-600 leading-relaxed">
-              TO THE MAXIMUM EXTENT PERMITTED BY LAW, HEALTHY-TEMPLATE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, TEAM CROSSFIT LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.
             </p>
           </div>
 
@@ -173,7 +189,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Governing Law</h2>
             <p className="text-gray-600 leading-relaxed">
-              These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.
+              These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law provisions.
             </p>
           </div>
 
@@ -182,8 +198,9 @@ export default function TermsPage() {
             <div className="glass-card p-6">
               <p className="text-gray-600 mb-2">If you have questions about these Terms, please contact us:</p>
               <p className="text-gray-600 mb-2"><strong>Email:</strong> <a href="mailto:hello@teamcrossfit.com" className="text-green-600 hover:underline">hello@teamcrossfit.com</a></p>
-              <p className="text-gray-600 mb-2"><strong>Phone:</strong> (855) XXX-XXXX</p>
-              <p className="text-gray-600"><strong>Website:</strong> <a href="/" className="text-green-600 hover:underline">teamcrossfit.com</a></p>
+              <p className="text-gray-600 mb-2"><strong>Phone:</strong> (302) 520-5454</p>
+              <p className="text-gray-600 mb-2"><strong>Address:</strong> #3085 1401 Pennsylvania Ave Suite 105, Wilmington, DE 19806</p>
+              <p className="text-gray-600"><strong>Website:</strong> <Link href="/" className="text-green-600 hover:underline">teamcrossfit.com</Link></p>
             </div>
           </div>
 

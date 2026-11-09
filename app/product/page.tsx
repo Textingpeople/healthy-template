@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Product — Team Cross Fit',
+  description: 'See how Team Cross Fit connects Apple Health and compatible devices to workplace wellness challenges and rewards.',
+};
 
 export default function ProductPage() {
   return (
